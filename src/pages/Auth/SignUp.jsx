@@ -62,7 +62,7 @@ export default function Signup() {
                     value={password}
                     onChange={(e) => setPassword(e.target.value)}
                 />
-                <div>Already have an account? <Link className="text-black" to={"/login"}>Login</Link> </div>
+                <div>Already have an account? <Link className="text-blue-600 hover:underline" to={"/login"}>Login</Link> </div>
                 <button
                     disabled={loading}
                     className="py-3 bg-black text-white rounded hover:opacity-80 transition"
