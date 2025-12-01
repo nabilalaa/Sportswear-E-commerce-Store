@@ -69,7 +69,7 @@ export default function Products() {
                 <select className="border border-gray-300 px-4 py-2 rounded-lg text-sm"
                     value={selectedCategory}
                     onChange={(e) => setSelectedCategory(e.target.value)}>
-                    <option disabled value="all">All Categories</option>
+                    <option  value="all">All Categories</option>
 
                     {categories.map((category) => (
                         <option key={category.id} value={category.id}>
