@@ -36,7 +36,7 @@ export default function Header() {
 
     return (
         <header className="w-full py-4 border-b border-gray-200 bg-white">
-            <div className="container mx-auto flex flex-wrap items-center justify-between">
+            <div className="container mx-auto flex gap-7 flex-wrap items-center justify-between">
 
                 {/* LOGO */}
                 <Link to="/" className="text-2xl font-bold">
@@ -44,7 +44,7 @@ export default function Header() {
                 </Link>
 
                 {/* NAVIGATION */}
-                <nav className="hidden md:flex gap-6 text-gray-700">
+                <nav className="flex gap-6 text-gray-700">
                     <Link to="/" className="hover:text-black transition">Home</Link>
                     <Link to="/products" className="hover:text-black transition">Products</Link>
                     <Link to={"/Categories"} className="hover:text-black transition">Categories</Link>
@@ -52,7 +52,7 @@ export default function Header() {
 
                 {/* ACTIONS */}
                 <div className="flex items-center gap-4">
-                    {user && <div className="flex gap-5">
+                    {user && <div className="flex gap-5 flex-wrap">
                         <p>Hello, {user.email}</p>
                         <button className="text-gray-700 hover:text-black transition cursor-pointer" onClick={logout}>Logout</button>
 

@@ -59,13 +59,14 @@ export default function Home() {
                 <div className="grid grid-cols-2 sm:grid-cols-4 gap-4">
 
                     {categories.map((cat) => (
-                        <div key={cat.id}
+                        <Link to={`/products?category=${cat.id}`}
+                            key={cat.id}
                             className="p-6 bg-gray-100 rounded-xl cursor-pointer 
                                 hover:bg-gray-200 hover:-translate-y-1 transition shadow-sm">
                             <h3 className="text-base sm:text-lg font-medium text-center">
                                 {cat.name}
                             </h3>
-                        </div>
+                        </Link>
                     ))}
 
                 </div>

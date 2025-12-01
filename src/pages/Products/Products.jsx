@@ -97,8 +97,8 @@ export default function Products() {
                     products.map((product) => (
                         <Link to={"/product/" + product.id} key={product.id}>
                             <div className="flex flex-col items-center">
-                                <div className="w-full h-40 bg-gray-100 rounded-xl mb-3"></div>
-                                <p className="text-sm text-gray-700">{product.title}</p>
+                                <div className="flex justify-center items-center  w-full h-40 bg-gray-100 rounded-xl mb-3
+                                group-hover:shadow-lg transition"><img className="h-full object-cover" src={product.image} alt="" /></div>                                <p className="text-sm text-gray-700">{product.title}</p>
                                 <p className="text-lg font-semibold">{product.price}$</p>
                             </div>
                         </Link>

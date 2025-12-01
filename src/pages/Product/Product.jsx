@@ -46,8 +46,8 @@ export default function Product() {
 
             <div className="grid md:grid-cols-2 gap-10 p-4">
                 {/* PRODUCT IMAGE */}
-                <div className="w-full h-80 bg-gray-100 rounded-xl"></div>
-
+                <div className="flex justify-center items-center  w-full h-90 bg-gray-100 rounded-xl mb-3
+                                group-hover:shadow-lg transition"><img className="h-full object-cover" src={product.image} alt="" /></div>
                 {/* PRODUCT INFO */}
                 <div>
                     <h1 className="text-3xl font-semibold mb-3">{product.title}</h1>
