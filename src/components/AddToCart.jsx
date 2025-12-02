@@ -6,28 +6,33 @@ export default function AddToCart({ product }) {
     console.log(product)
     async function addToCart() {
         const
-            { data: user }
+            { data }
                 = await supabase.auth.getUser();
+
+        const user = data?.user;
+
         if (!user) {
             navigate("/login")
-        }
-
-        const { error } = await supabase.from("cart").insert([
-            {
-                user_id: user.user.id,
-                product_id: product,
-                quantity: 1,
-            },
-        ]);
-        navigate("/cart")
-
-
-        if (error) {
-            console.log(error);
-            alert("Error adding to cart");
         } else {
-            alert("Added to cart!");
+            const { error } = await supabase.from("cart").insert([
+                {
+                    user_id: user.user.id,
+                    product_id: product,
+                    quantity: 1,
+                },
+            ]);
+            navigate("/cart")
+
+
+            if (error) {
+                console.log(error);
+                alert("Error adding to cart");
+            } else {
+                alert("Added to cart!");
+            }
         }
+
+
 
     }
 

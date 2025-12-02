@@ -70,7 +70,6 @@ export default function Header() {
                         </Link>
                     </div>}
 
-                    {/* لو مفيش يوزر */}
                     {!user && <div className="flex gap-5">
                         <Link to="/login" className=" text-gray-700 hover:text-black transition">
                             Login
