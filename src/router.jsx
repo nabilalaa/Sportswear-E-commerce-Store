@@ -25,6 +25,7 @@ import AddProduct from "./dashboard/Products/AddProduct";
 import EditProduct from "./dashboard/Products/EditProduct";
 import OrderDetails from "./dashboard/Orders/OrderDetails";
 import DashboardCategories from "./dashboard/Category/Categories";
+import { authLoader } from "./loader/authLoader";
 
 
 
@@ -69,6 +70,8 @@ export const router = createBrowserRouter([
 		path: "/dashboard",
 		element: <DashboardLayout />,
 		errorElement: <div>not found</div>,
+		loader: authLoader,
+
 
 		children: [
 			{ index: true, element: <DashboardHome /> },

@@ -3,20 +3,19 @@ import { supabase } from "../lib/supabase";
 
 export default function AddToCart({ product }) {
     const navigate = useNavigate();
-    console.log(product)
     async function addToCart() {
         const
             { data }
                 = await supabase.auth.getUser();
 
         const user = data?.user;
-
+        console.log(user)
         if (!user) {
             navigate("/login")
         } else {
             const { error } = await supabase.from("cart").insert([
                 {
-                    user_id: user.user.id,
+                    user_id: user.id,
                     product_id: product,
                     quantity: 1,
                 },

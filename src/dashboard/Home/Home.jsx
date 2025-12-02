@@ -49,13 +49,14 @@ export default function DashboardOverview() {
                     const { data: user } = await supabase
                         .from("app_users")
                         .select("email")
-                        .eq("id", order.user_id)
-                        .single();
+                        .eq("auth_id", order.user_id)
+                    console.log(user)
 
                     return {
                         ...order,
-                        user_email: user?.email || "Unknown",
+                        user_email: user[0]?.email || "Unknown",
                     };
+
                 })
             );
 

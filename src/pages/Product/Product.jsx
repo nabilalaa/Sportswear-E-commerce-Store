@@ -51,7 +51,7 @@ export default function Product() {
                 <div>
                     <h1 className="text-3xl font-semibold mb-3">{product.title}</h1>
 
-                    <p className="text-2xl font-bold mb-4">$120</p>
+                    <p className="text-2xl font-bold mb-4">{product.price}$</p>
 
                     {/* DESCRIPTION */}
                     <p className="text-gray-600 mb-6 leading-relaxed">
