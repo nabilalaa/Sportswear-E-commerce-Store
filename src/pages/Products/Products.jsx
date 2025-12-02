@@ -39,12 +39,13 @@ export default function Products() {
             }
 
             // Sort by price
-            if (sortOrder === "low") {
+            if (sortOrder === "Low to High") {
                 query = query.order("price", { ascending: true });
-            } else if (sortOrder === "high") {
+
+            } else if (sortOrder === "High to Low") {
                 query = query.order("price", { ascending: false });
             }
-            console.log(query)
+
 
             const { data, error } = await query;
 
