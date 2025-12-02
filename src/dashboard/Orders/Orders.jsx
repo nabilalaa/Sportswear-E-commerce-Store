@@ -12,7 +12,7 @@ export default function DashboardOrders() {
                 .from("orders")
                 .select("*, user_id")
                 .order("created_at", { ascending: false });
-
+            console.log(data)
             if (!error) setOrders(data);
             setLoading(false);
         }
@@ -47,7 +47,7 @@ export default function DashboardOrders() {
 
 
                             <td className="p-3">
-                                {new Date(order.created_at).toLocaleDateString()}
+                                {new Date(order.created_at).toLocaleDateString("ar-EG")}
                             </td>
 
                             <td className="p-3">

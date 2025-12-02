@@ -3,7 +3,7 @@ import { supabase } from "../../lib/supabase";
 import { useParams } from "react-router-dom";
 
 export default function OrderDetails() {
-    const { id } = useParams(); // order ID
+    const { id } = useParams();
     const [order, setOrder] = useState(null);
     const [items, setItems] = useState([]);
     const [loading, setLoading] = useState(true);
@@ -32,14 +32,6 @@ export default function OrderDetails() {
         loadOrder();
     }, []);
 
-    // ----------------------------
-    // LOAD ORDER + ORDER ITEMS
-    // ----------------------------
-
-
-    // ----------------------------
-    // UPDATE ORDER STATUS
-    // ----------------------------
 
 
     if (loading) return <p>Loading...</p>;

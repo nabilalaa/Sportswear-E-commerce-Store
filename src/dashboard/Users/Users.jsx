@@ -17,7 +17,6 @@ export default function DashboardUsers() {
         if (!error) setUsers(data);
         setLoading(false);
     }
-    console.log(users)
 
     useEffect(() => {
         // eslint-disable-next-line react-hooks/set-state-in-effect

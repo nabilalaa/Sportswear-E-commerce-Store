@@ -50,7 +50,6 @@ export default function DashboardOverview() {
                         .from("app_users")
                         .select("email")
                         .eq("auth_id", order.user_id)
-                    console.log(user)
 
                     return {
                         ...order,
