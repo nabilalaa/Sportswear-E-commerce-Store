@@ -13,6 +13,7 @@ export default function AddProduct() {
     const [desc, setDesc] = useState("");
     const [imageFile, setImageFile] = useState(null);
     const [loading, setLoading] = useState(false);
+    const [uploadedMsg, setuploadedMsg] = useState("");
 
     async function uploadImage(file) {
         const fileName = `product-${Date.now()}-${file.name}`;
@@ -33,6 +34,13 @@ export default function AddProduct() {
 
         return url;
     }
+    useEffect(() => {
+        if (imageFile) {
+            // eslint-disable-next-line react-hooks/set-state-in-effect
+            setuploadedMsg(imageFile.name)
+        }
+    }, [imageFile])
+
     useEffect(() => {
         async function loadCategories() {
             const { data } = await supabase.from("category").select("*");
@@ -121,10 +129,13 @@ export default function AddProduct() {
                     <input
                         type="file"
                         className="hidden"
-                        onChange={(e) => setImageFile(e.target.files[0])}
+                        onChange={(e) => setImageFile(e.target.files[0])
+                        }
                     />
                 </label>
-
+                {uploadedMsg && (
+                    <p className="text-green-600 mt-2">{uploadedMsg}</p>
+                )}
 
                 <button
                     disabled={loading}
