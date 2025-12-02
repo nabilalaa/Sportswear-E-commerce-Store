@@ -40,7 +40,7 @@ export default function DashboardOverview() {
             const { data: rawRecent } = await supabase
                 .from("orders")
                 .select("*")
-                .order("created_at", { ascending: false })
+                .order("created_at", { ascending: true })
                 .limit(5);
 
             // get user email for each order
