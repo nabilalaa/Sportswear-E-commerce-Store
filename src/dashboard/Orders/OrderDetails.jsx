@@ -46,11 +46,7 @@ export default function OrderDetails() {
                 <p><strong>Order ID:</strong> {order.id}</p>
                 <p><strong>User ID:</strong> {order.user_id}</p>
                 <p><strong>Total:</strong> ${order.total}</p>
-                <p><strong>Date:</strong> {new Date(order.created_at).toLocaleString()}</p>
-
-
-
-
+                <p><strong>Date:</strong> {new Date(order.created_at).toLocaleDateString("en-GB")}</p>
             </div>
 
             {/* ORDER ITEMS */}

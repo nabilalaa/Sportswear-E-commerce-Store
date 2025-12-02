@@ -47,7 +47,7 @@ export default function DashboardOrders() {
 
 
                             <td className="p-3">
-                                {new Date(order.created_at).toLocaleDateString("ar-EG")}
+                                {new Date(order.created_at).toLocaleDateString("en-GB")}
                             </td>
 
                             <td className="p-3">

@@ -129,7 +129,8 @@ export default function DashboardOverview() {
                                     <td className="py-2">{order.user_email}</td>
                                     <td className="py-2">${order.total}</td>
                                     <td className="py-2">
-                                        {new Date(order.created_at).toLocaleDateString()}
+                                        {new Date(order.created_at).toLocaleDateString("en-GB")}
+
                                     </td>
                                     <td className="py-2">
                                         <Link
